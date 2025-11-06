@@ -11,7 +11,7 @@ import { MenuItem } from "@/types/menu-item"
 
 export function Header() {
     const menu: MenuItem[] = [
-        { label: 'Camisa', href: '/categories/camisa' },
+        { label: 'Gravatas', href: '/categories/gravatas' },
         { label: 'Kits', href: '/categories/kits' },
     ]
 
@@ -20,13 +20,13 @@ export function Header() {
     return (
         <header className="bg-white border-b border-gray-200">
             <div className="bg-black text-white text-center p-4">
-                <strong>FRETE GRÀTIS</strong> para todo o nordeste nas compras acima de R$199,99. <strong>APROVEITA</strong>
+                <strong>FRETE GRÁTIS</strong> para todo o Nordeste nas compras acima de R$199,99. <strong>APROVEITA</strong>
             </div>
 
             <div className="w-full max-w-6xl mx-auto p-6">
                 <div className="flex items-center justify-between">
                     <div className="">
-                        Logo
+                       Logo
                     </div>
                     <div className="flex-1">
                         <div className="w-full hidden md:flex items-center px-6 gap-6">

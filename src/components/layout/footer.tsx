@@ -6,7 +6,7 @@ import { MenuItem } from "@/types/menu-item";
 
 export const Footer = () => {
     const menu: MenuItem[] = [
-        { label: 'Camisas', href: '/categories/camisas' },
+        { label: 'Gravatas', href: '/categories/gravatas' },
         { label: 'Kits', href: '/categories/kits' }
     ];
     return (
@@ -59,9 +59,9 @@ export const Footer = () => {
                             <h4 className="mb-6 text-center md:text-left">Precisa de ajuda?</h4>
                             <div className="flex flex-col md:flex-row gap-6">
                                 <FooterButton
-                                    href="mailto:suporte@b7web.com.br"
+                                    href="mailto:bianca@gmail.com"
                                     icon="/assets/ui/mail-line.png"
-                                    label="suporte@b7web.com.br"
+                                    label="bianca@gmail.com"
                                 />
                                 <FooterButton
                                     href=""
