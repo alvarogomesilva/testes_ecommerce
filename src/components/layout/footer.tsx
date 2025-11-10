@@ -41,12 +41,13 @@ export const Footer = () => {
                 <div className="w-full max-w-6xl mx-auto px-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-16 md:py-10 border-b border-gray-700">
                         <Link href="/">
-                            <Image
+                            {/* <Image
                                 src={'/assets/ui/logo-white.png'}
                                 alt="B7Store"
                                 width={143}
                                 height={48}
-                            />
+                            /> */}
+                            <div>LOGO</div>
                         </Link>
                         <ul className="flex flex-col md:flex-row gap-8 items-center">
                             {menu.map((item, index) => (
@@ -66,7 +67,7 @@ export const Footer = () => {
                                 <FooterButton
                                     href=""
                                     icon="/assets/ui/phone-line.png"
-                                    label="(11) 99999-9999"
+                                    label="(47) 9 8812-3376"
                                 />
                             </div>
                         </div>
@@ -94,8 +95,7 @@ export const Footer = () => {
                     </div>
                     <div className="flex flex-col md:flex-row gap-14 justify-between items-center py-16 md:py-10">
                         <div className="text-xl text-center md:text-left">
-                            Se você leu isso aqui, saiba que está no caminho certo!<br />
-                            Continue estudando e você chegará lá...
+                            It is a long established fact that a reader will be <br /> distracted by the readable content of a page when looking at its layout.
                         </div>
                         <div className="flex justify-center">
                             <FooterButton

@@ -16,6 +16,7 @@ export default async function Page({ params }: Props) {
             <div className="flex flex-col md:flex-row gap-6 md:gap-32">
 
                 <ImageSlider images={data.product.images}/>
+                
                 <ProductDetails product={data.product}/>
             </div>
 

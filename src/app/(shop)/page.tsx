@@ -11,9 +11,9 @@ export default function Home() {
       <Suspense fallback={<ProductListSkeleton />}>
         <MostViewedProduts />
       </Suspense>
-      <Suspense fallback={<ProductListSkeleton />}>
+      {/* <Suspense fallback={<ProductListSkeleton />}>
         <MostSoldProduts />
-      </Suspense>
+      </Suspense> */}
     </div>
   )
 }

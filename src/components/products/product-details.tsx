@@ -1,10 +1,11 @@
 import { ProductDetail } from "@/types/product"
 import Image from "next/image"
+import Link from "next/link"
 
 type Props = {
     product: ProductDetail
 }
-export function ProductDetails({ product }: Props) {
+export async function ProductDetails({ product }: Props) {
 
     return (
         <div className="flex-1">
@@ -13,12 +14,14 @@ export function ProductDetails({ product }: Props) {
             <div className="font-bold text-4xl text-blue-600 mb-2">{product.price.toFixed(2)}</div>
             <div className="text-sm text-gray-500 mb-6">Pagamento via pix</div>
             <div className="flex gap-4">
-                <button
-                    className="py-4 px-8 flex-1 max-w-xs bg-blue-600 text-white border-0 rounded-sm cursor-pointer hover:opacity-90"
-                >Adicionar ao carrinho</button>
+                <Link
+                    href={`https://wa.me/4788123376?text=Oi, tudo bem?`}
+                    target="_blank"
+                    className="py-4 px-8 flex-1 max-w-xs bg-blue-600 text-white text-center border-0 rounded-sm cursor-pointer hover:opacity-90"
+                >Entrar em contato</Link>
 
                 <div className="size-14 border border-gray-200 flex justify-center items-center rounded-sm">
-                    <Image 
+                    <Image
                         src={'/assets/ui/share-line.png'}
                         alt=""
                         width={24}
@@ -26,7 +29,7 @@ export function ProductDetails({ product }: Props) {
                     />
                 </div>
                 <div className="size-14 border border-gray-200 flex justify-center items-center rounded-sm">
-                    <Image 
+                    <Image
                         src={'/assets/ui/share-line.png'}
                         alt=""
                         width={24}
