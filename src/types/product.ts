@@ -1,5 +1,5 @@
 export type Product = {
-    id: string
+    id: string | number
     label: string
     image: string
     price: number
@@ -8,7 +8,7 @@ export type Product = {
 }
 
 export type ProductDetail = {
-    id: string
+    id: string | number
     label: string
     //images: string[]
     price: number

@@ -3,7 +3,7 @@ import { getProducts } from "@/actions/get-products";
 import { Product } from "@/types/product";
 
 export async function MostViewedProduts() {
-  const products = await getProducts() as Product[]
+  const products = await getProducts()
 
     return (
         <div className="mt-10">
