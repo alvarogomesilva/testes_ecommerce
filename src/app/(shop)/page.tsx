@@ -3,11 +3,10 @@ import { MostViewedProduts } from "@/components/home/most-viewed-products";
 import { ProductListSkeleton } from "@/components/home/product-list-skeleton";
 import { Suspense } from "react";
 
-export default function Home() {
+export default async function Home() {
+
   return (
     <div>
-
-
       <Suspense fallback={<ProductListSkeleton />}>
         <MostViewedProduts />
       </Suspense>

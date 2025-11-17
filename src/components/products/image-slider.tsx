@@ -22,7 +22,9 @@ export function ImageSlider({ images }: Props) {
                 alt=""
                 width={380}
                 height={380}
+                style={{ height: "auto" }}
                 className="max-w-full max-h-96"
+                unoptimized
             />
             </div>
             <div className="grid grid-cols-4 gap-6 mt-7">
@@ -37,6 +39,7 @@ export function ImageSlider({ images }: Props) {
                             width={120}
                             height={120}
                             className="max-h-20"
+                            unoptimized
                         />
                     </div>
                 ))}

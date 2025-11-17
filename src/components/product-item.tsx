@@ -18,7 +18,7 @@ export function ProductItem({ data }: Props) {
     }
 
     return (
-        <div className="bg-white rounded-sm">
+        <div className="bg-white rounded-sm border border-gray-200 p-6">
             {/* <div className="flex justify-end">
                 <div 
                 onClick={toggleLiked}
@@ -41,29 +41,30 @@ export function ProductItem({ data }: Props) {
                 </div>
             </div> */}
 
-            <div className="">
+            <div className="flex justify-center">
                 <Link href={link}>
                     <Image
                         src={data.image}
                         alt={data.label}
                         width={200}
                         height={200}
-                        className="w-full h-60 rounded-t-sm"
+                        className="max-w-full h-48"
+                        unoptimized
                     />
                 </Link>
             </div>
 
-            <div className="mt-9 text-lg font-bold pl-6">
+            <div className="mt-9 text-lg font-bold">
                 <Link href={link}>
                     {data.label}
                 </Link>
             </div>
-            <div className="mt-3 text-2xl font-bold text-blue-600 pl-6">
+            <div className="mt-3 text-2xl font-bold text-blue-600 ">
                 <Link href={link}>
                     R$ {data.price.toFixed(2)}
                 </Link>
             </div>
-            <div className="mt-5 text-gray-400 pl-6 pb-6">Pagamento via pix</div>
+            <div className="mt-5 text-gray-400">Pagamento via pix</div>
         </div>
     )
 }

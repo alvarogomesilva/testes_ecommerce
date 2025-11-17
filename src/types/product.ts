@@ -1,16 +1,18 @@
 export type Product = {
-    id: number
+    id: string
     label: string
     image: string
     price: number
     liked: boolean
+    created_at: Date
 }
 
 export type ProductDetail = {
-    id: number
+    id: string
     label: string
-    images: string[]
+    //images: string[]
     price: number
     liked: boolean
-    description: string
+    description: string,
+    created_at: Date
 }
