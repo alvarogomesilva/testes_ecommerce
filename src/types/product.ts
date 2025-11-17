@@ -4,7 +4,7 @@ export type Product = {
     image: string
     price: number
     liked: boolean
-    created_at: Date
+    created_at?: Date
 }
 
 export type ProductDetail = {
@@ -14,5 +14,5 @@ export type ProductDetail = {
     price: number
     liked: boolean
     description: string,
-    created_at: Date
+    created_at?: Date
 }
