@@ -1,11 +1,9 @@
-import { data } from "@/data";
 import { ProductList } from "../product-list";
 import { getProducts } from "@/actions/get-products";
+import { Product } from "@/types/product";
 
 export async function MostViewedProduts() {
-  const products = await getProducts()
-
- // console.log(products)
+  const products = await getProducts() as Product[]
 
     return (
         <div className="mt-10">
