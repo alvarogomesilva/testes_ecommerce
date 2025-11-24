@@ -1,3 +1,4 @@
+import { getColorsUrlImages } from "@/actions/get-colors-url-image"
 import { getProductWithCategory } from "@/actions/get-product-with-category"
 import { ImageSlider } from "@/components/products/image-slider"
 import { ProductDescription } from "@/components/products/product-description"
@@ -13,10 +14,17 @@ export default async function Page({ params }: Props) {
     const { id } = await params
 
     const data = await getProductWithCategory(id)
+    const colorsImages = await getColorsUrlImages(id)
 
     if (!data) {
         return redirect('/')
     }
+
+    if (!colorsImages) {
+        return redirect('/')
+    }
+
+    
 
     return (
         <div>
@@ -24,7 +32,7 @@ export default async function Page({ params }: Props) {
 
                 <ImageSlider images={data.images}/>
                 
-                <ProductDetails product={data.product}/>
+                <ProductDetails product={data.product} colors={colorsImages.colors}/>
             </div>
 
             <ProductDescription text={data.product.description}/>
