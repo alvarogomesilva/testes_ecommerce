@@ -32,7 +32,7 @@ export default async function Page({ params }: Props) {
 
                 <ImageSlider images={data.images}/>
                 
-                <ProductDetails product={data.product} colors={colorsImages.colors}/>
+                <ProductDetails product={data.product} />
             </div>
 
             <ProductDescription text={data.product.description}/>

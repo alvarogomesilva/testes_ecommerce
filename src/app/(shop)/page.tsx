@@ -60,15 +60,23 @@ export default async function Home() {
           </div>
         </div>
 
-       
+
       </div>
 
       <Suspense fallback={<ProductListSkeleton />}>
-        <MostViewedProduts />
+        <MostViewedProduts title="Gravatas Kasihimir" />
       </Suspense>
       {/* <Suspense fallback={<ProductListSkeleton />}>
         <MostSoldProduts />
       </Suspense> */}
+
+      <Suspense fallback={<ProductListSkeleton />}>
+        <MostViewedProduts title="Gravatas Lisas" />
+      </Suspense>
+
+      <Suspense fallback={<ProductListSkeleton />}>
+        <MostViewedProduts title="Gravatas Xadrez" />
+      </Suspense>
     </div>
   )
 }

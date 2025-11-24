@@ -10,7 +10,9 @@ import type { Product } from "@/types/product";
 
 export async function getProducts(): Promise<Product[]> {
   try {
-    const q = query(collection(database, "products"));
+    const path = collection(database, "products")
+    const q = query(path, where("category", "==", "kasihimir"));
+
     const querySnapshot = await getDocs(q);
 
     const products = await Promise.all(

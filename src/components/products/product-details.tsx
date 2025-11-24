@@ -3,24 +3,14 @@ import Image from "next/image"
 import Link from "next/link"
 
 type Props = {
-    product: ProductDetail,
-    colors: string[]
+    product: ProductDetail
 }
-export async function ProductDetails({ product, colors }: Props) {
+export async function ProductDetails({ product }: Props) {
 
     return (
         <div className="flex-1">
             <div className="text-sm text-gray-500 mb-2">Cód: {product.id}</div>
             <div className="font-bold text-3xl mb-3">{product.label}</div>
-            <div className="text-gray-400 text-sm mb-3">Cores disponíveis: </div>
-            <div className="flex gap-4 mb-4">
-
-                {colors.map((item, index) => (
-                    <div key={index} className={`size-10 bg-${item}-500 rounded-sm`}></div>
-                ))}
-
-            </div>
-
             <div className="font-bold text-4xl text-blue-600 mb-2">R$ {product.price.toFixed(2).replace('.', ',')}</div>
             <div className="text-sm text-gray-500 mb-6">Forma de pagamento via PIX</div>
             <div className="flex gap-4">
