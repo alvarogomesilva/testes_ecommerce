@@ -1,5 +1,4 @@
 import { Banners } from "@/components/home/banners";
-import { MostSoldProduts } from "@/components/home/most-sold-products";
 import { MostViewedProduts } from "@/components/home/most-viewed-products";
 import { ProductListSkeleton } from "@/components/home/product-list-skeleton";
 import { data } from "@/data";
@@ -64,18 +63,24 @@ export default async function Home() {
       </div>
 
       <Suspense fallback={<ProductListSkeleton />}>
-        <MostViewedProduts title="Gravatas Kasihimir" />
+        <MostViewedProduts 
+            title="Gravatas Kasihimir" 
+            category="kasihimir" 
+          />
       </Suspense>
-      {/* <Suspense fallback={<ProductListSkeleton />}>
-        <MostSoldProduts />
-      </Suspense> */}
+     
+      <Suspense fallback={<ProductListSkeleton />}>
+        <MostViewedProduts 
+            title="Gravatas Lisas" 
+            category="lisas" 
+          />
+      </Suspense>
 
       <Suspense fallback={<ProductListSkeleton />}>
-        <MostViewedProduts title="Gravatas Lisas" />
-      </Suspense>
-
-      <Suspense fallback={<ProductListSkeleton />}>
-        <MostViewedProduts title="Gravatas Xadrez" />
+        <MostViewedProduts 
+            title="Gravatas Xadrez" 
+            category="xadrez" 
+          />
       </Suspense>
     </div>
   )

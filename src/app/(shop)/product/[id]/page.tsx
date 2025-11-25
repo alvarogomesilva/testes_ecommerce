@@ -14,17 +14,10 @@ export default async function Page({ params }: Props) {
     const { id } = await params
 
     const data = await getProductWithCategory(id)
-    const colorsImages = await getColorsUrlImages(id)
 
     if (!data) {
         return redirect('/')
     }
-
-    if (!colorsImages) {
-        return redirect('/')
-    }
-
-    
 
     return (
         <div>

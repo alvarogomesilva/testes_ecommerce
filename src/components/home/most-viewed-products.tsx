@@ -1,13 +1,15 @@
 import { ProductList } from "../product-list";
 import { getProducts } from "@/actions/get-products";
-import { Product } from "@/types/product";
 
 type Props = {
     title: string
+    category: 'kasihimir' | 'lisas' | 'xadrez';
 }
 
-export async function MostViewedProduts({ title }: Props) {
-    const products = await getProducts()
+export async function MostViewedProduts({ title, category }: Props) {
+    const products = await getProducts({
+        category: category
+    })
 
     return (
         <div className="mt-10">

@@ -1,47 +1,53 @@
 import { database } from "@/config/firebase-config";
-import { 
-  collection, 
-  query, 
+import {
+  collection,
+  query,
   getDocs,
   where,
-  limit 
+  limit
 } from "firebase/firestore";
+
 import type { Product } from "@/types/product";
 
-export async function getProducts(): Promise<Product[]> {
+type Props = {
+  category: 'kasihimir' | 'lisas' | 'xadrez';
+};
+
+export async function getProducts({ category }: Props): Promise<Product[]> {
   try {
-    const path = collection(database, "products")
-    const q = query(path, where("category", "==", "kasihimir"));
+    const q = query(
+      collection(database, "products"),
+      where("category", "==", category)
+    );
 
     const querySnapshot = await getDocs(q);
 
-    const products = await Promise.all(
-      querySnapshot.docs.map(async (doc) => {
-        const data = doc.data();
+    const products: Product[] = [];
 
-        const imagesQuery = query(
-          collection(database, "product_images"),
-          where("product_id", "==", doc.id),
-          limit(1)
-        );
+    for (const docSnap of querySnapshot.docs) {
+      const data = docSnap.data();
 
-        const imagesSnapshot = await getDocs(imagesQuery);
+      const imagesQuery = query(
+        collection(database, "product_images"),
+        where("product_id", "==", docSnap.id),
+        limit(1)
+      );
 
-        let firstImage: string | null = null;
+      const imagesSnapshot = await getDocs(imagesQuery);
 
-        if (!imagesSnapshot.empty) {
-          const imageData = imagesSnapshot.docs[0].data();
-          firstImage = imageData.url || null;
-        }
+      let firstImage: string | null = null;
 
-        return {
-          id: doc.id,
-          ...data,
-          created_at: data.created_at?.toDate().toISOString() ?? null,
-          image: firstImage,
-        } as Product
-      })
-    );
+      if (!imagesSnapshot.empty) {
+        firstImage = imagesSnapshot.docs[0].data().url ?? null;
+      }
+
+      products.push({
+        id: docSnap.id,
+        ...data,
+        created_at: data.created_at?.toDate().toISOString() ?? null,
+        image: firstImage,
+      } as Product);
+    }
 
     return products;
 

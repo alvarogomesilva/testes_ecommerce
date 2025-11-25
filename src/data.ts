@@ -1,9 +1,8 @@
 export const data = {
     banners: [
-        { image: '/assets/banners/banner-1.png', link: '' },
-        { image: '/assets/banners/banner-2.png', link: '' },
         { image: '/assets/banners/banner-3.png', link: '' },
         { image: '/assets/banners/banner-4.png', link: '' },
+
     ], 
     products: [
         { id: 1, label: 'Gravata Kashimir', price: 45.00, image: '/assets/products/gravata-1.webp', liked: false },

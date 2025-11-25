@@ -11,8 +11,7 @@ import { MenuItem } from "@/types/menu-item"
 
 export function Header() {
     const menu: MenuItem[] = [
-        { label: 'Gravatas', href: '/' },
-        { label: 'Kits', href: '/' },
+        { label: 'Gravatas', href: '/' }
     ]
 
     const [menuOpened, setMenuOpened] = useState(false)

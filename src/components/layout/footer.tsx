@@ -6,8 +6,7 @@ import { MenuItem } from "@/types/menu-item";
 
 export const Footer = () => {
     const menu: MenuItem[] = [
-        { label: 'Gravatas', href: '/' },
-        { label: 'Kits', href: '/' }
+        { label: 'Gravatas', href: '/' }
     ];
     return (
         <footer>
